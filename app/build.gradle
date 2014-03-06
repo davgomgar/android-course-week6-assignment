@@ -1,0 +1,25 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 11
+        targetSdkVersion 18
+
+        testPackageName "course.labs.GraphicsLab.test"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    instrumentTestCompile 'com.jayway.android.robotium:robotium-solo:4.3.1'
+}
